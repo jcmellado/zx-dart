@@ -42,8 +42,8 @@ class Keyboard {
   Keyboard() {
     _initMapping();
 
-    html.document.on.keyDown.add(_onKeyDown);
-    html.document.on.keyUp.add(_onKeyUp);
+    html.document.onKeyDown.listen(_onKeyDown);
+    html.document.onKeyUp.listen(_onKeyUp);
   }
 
   void _initMapping() {
