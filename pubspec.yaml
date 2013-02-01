@@ -19,10 +19,9 @@
 # THE SOFTWARE.
 
 name: zx
-version: 0.1.0
+version: 0.1.1
 author: Juan Mellado <jcmellado@gmail.com>
-homepage: https://code.google.com/p/zx-dart/
 description: ZX Spectrum emulator written in Dart
-
+homepage: https://code.google.com/p/zx-dart/
 dependencies:
   browser: any

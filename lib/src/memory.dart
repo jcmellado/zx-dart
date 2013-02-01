@@ -47,9 +47,9 @@ class Memory48k extends Memory {
 }
 
 abstract class Memory {
-  final List<List<int>> _rom48k = new List<List<int>>(1);
-  final List<List<int>> _ram = new List<List<int>>(8);
-  final List<Bank> _banks = new List<Bank>(4);
+  final List<List<int>> _rom48k = new List<List<int>>.fixedLength(1);
+  final List<List<int>> _ram = new List<List<int>>.fixedLength(8);
+  final List<Bank> _banks = new List<Bank>.fixedLength(4);
 
   Memory() {
     _init();
@@ -85,7 +85,7 @@ abstract class Memory {
 
   void _allocateMemory(List<List<int>> memory) {
     for (var i = 0; i < memory.length; ++ i) {
-      memory[i] = new List<int>(0x4000);
+      memory[i] = new List<int>.fixedLength(0x4000);
     }
   }
 
@@ -104,6 +104,6 @@ abstract class Memory {
     request.overrideMimeType("text/plain; charset=x-user-defined");
     request.send();
 
-    return request.responseText.charCodes.map((int code) => code & 0xff);
+    return request.responseText.charCodes.mappedBy((int code) => code & 0xff).toList();
   }
 }

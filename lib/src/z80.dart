@@ -54,16 +54,16 @@ class Z80 {
   int _im;
   bool _NMI, _INT, _EI, _HALT, _IFF1, _IFF2;
 
-  final List<Function> _opcodes = new List<Function>(256);
-  final List<Function> _opcodesCB = new List<Function>(256);
-  final List<Function> _opcodesED = new List<Function>(256);
-  final List<Function> _opcodesDDFD = new List<Function>(256);
-  final List<Function> _opcodesDDFDCB = new List<Function>(256);
+  final List<Function> _opcodes = new List<Function>.fixedLength(256);
+  final List<Function> _opcodesCB = new List<Function>.fixedLength(256);
+  final List<Function> _opcodesED = new List<Function>.fixedLength(256);
+  final List<Function> _opcodesDDFD = new List<Function>.fixedLength(256);
+  final List<Function> _opcodesDDFDCB = new List<Function>.fixedLength(256);
 
-  final List<int> _sz53n_add = new List<int>(256);
-  final List<int> _sz53n_sub = new List<int>(256);
-  final List<int> _sz53pn_add = new List<int>(256);
-  final List<int> _sz53pn_sub = new List<int>(256);
+  final List<int> _sz53n_add = new List<int>.fixedLength(256);
+  final List<int> _sz53n_sub = new List<int>.fixedLength(256);
+  final List<int> _sz53pn_add = new List<int>.fixedLength(256);
+  final List<int> _sz53pn_sub = new List<int>.fixedLength(256);
 
   Z80(this._machine) {
     _init();
