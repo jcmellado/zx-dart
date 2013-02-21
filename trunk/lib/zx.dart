@@ -23,6 +23,7 @@ THE SOFTWARE.
 library zx;
 
 import "dart:html" as html;
+import "dart:async" as async;
 import "dart:math" as math;
 
 part "src/model.dart";

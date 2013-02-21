@@ -53,7 +53,7 @@ abstract class Machine {
   void run() {
     _z80.reset();
 
-    html.window.setInterval(_update, 20);
+    new async.Timer.repeating(const Duration(milliseconds: 20), _update);
   }
 
   int fetchOpcode(int address) {
@@ -144,7 +144,7 @@ abstract class Machine {
     }
   }
 
-  void _update() {
+  void _update(async.Timer timer) {
     _generateFrame();
     _drawFrame();
   }
