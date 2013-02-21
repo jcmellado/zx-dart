@@ -104,6 +104,6 @@ abstract class Memory {
     request.overrideMimeType("text/plain; charset=x-user-defined");
     request.send();
 
-    return request.responseText.charCodes.mappedBy((int code) => code & 0xff).toList();
+    return request.responseText.charCodes.map((int code) => code & 0xff).toList();
   }
 }
