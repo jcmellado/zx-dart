@@ -1,4 +1,8 @@
 
+#### 0.1.3 - Mar 08, 2013
+
+  * Replaced deprecated "String.charCodes" for "String.codeUnits"
+  
 #### 0.1.2 - Feb 21, 2013
 
   * M3 update
