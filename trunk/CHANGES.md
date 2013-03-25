@@ -1,4 +1,11 @@
 
+
+#### 0.1.4 - Mar 25, 2013
+
+  * Changed from Timer.repeating to Timer.periodic
+  * Removed deprecated List.fixedLengt constructor
+  * Changed async parameter of HttpRequest, now is optional
+
 #### 0.1.3 - Mar 08, 2013
 
   * Replaced deprecated "String.charCodes" for "String.codeUnits"

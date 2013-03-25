@@ -53,7 +53,7 @@ abstract class Machine {
   void run() {
     _z80.reset();
 
-    new async.Timer.repeating(const Duration(milliseconds: 20), _update);
+    new async.Timer.periodic(const Duration(milliseconds: 20), _update);
   }
 
   int fetchOpcode(int address) {
