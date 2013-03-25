@@ -35,10 +35,10 @@ class Color {
 }
 
 class Screen {
-  final List<int> _rows = new List<int>.fixedLength(192);
+  final List<int> _rows = new List<int>(192);
 
-  final List<Color> _ink = new List<Color>.fixedLength(256);
-  final List<Color> _paper = new List<Color>.fixedLength(256);
+  final List<Color> _ink = new List<Color>(256);
+  final List<Color> _paper = new List<Color>(256);
   int _flash = 0;
 
   final List<Color> _palette =
