@@ -31,7 +31,7 @@ part of zx;
 abstract class Frame {
   int _tstates = 0;
 
-  final List<int> _delays = new List<int>();
+  final List<int> _delays = new List<int>.filled(69888 + 256, 0);
 
   Frame() {
     _initDelays();
@@ -53,8 +53,6 @@ abstract class Frame {
 class Frame48k extends Frame {
 
   void _initDelays() {
-    _delays.insertRange(0, 69888 + 256, 0);
-
     var cycle = 14335;
 
     for (var row = 0; row < 192; ++ row, cycle += 96) {

@@ -1,4 +1,8 @@
 
+#### 0.1.5 - Apr 26, 2013
+
+  * M4 update
+  * Removed List.insertRange function, used List.filled constructor instead
 
 #### 0.1.4 - Mar 25, 2013
 
