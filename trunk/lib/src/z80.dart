@@ -734,7 +734,7 @@ class Z80 {
 
     _memptr = (_bc + 1) & 0xffff;
 
-    var value = _machine.peek8(_hl);
+    int value = _machine.peek8(_hl);
 
     _machine.out8(_bc, value);
 
@@ -758,7 +758,7 @@ class Z80 {
 
     _memptr = (_bc - 1) & 0xffff;
 
-    var value = _machine.peek8(_hl);
+    int value = _machine.peek8(_hl);
 
     _machine.out8(_bc, value);
 
@@ -908,7 +908,7 @@ class Z80 {
 
     _opcodes[0x10] = () { //DJNZ offset
       _machine.contention(_ir, 1);
-      var value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
+      int value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
       _b = (_b - 1) & 0xff;
       if (_b != 0) {
         _machine.contention(_pc, 5);
@@ -990,7 +990,7 @@ class Z80 {
     };
 
     _opcodes[0x20] = () { //JR NZ, offset
-      var value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
+      int value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
       if ((_f & _FLAG_Z) == 0) {
         _machine.contention(_pc, 5);
         _pc = (_pc + value + 1) & 0xffff;
@@ -1034,7 +1034,7 @@ class Z80 {
     };
 
     _opcodes[0x28] = () { //JR Z, offset
-      var value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
+      int value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
       if ((_f & _FLAG_Z) != 0) {
         _machine.contention(_pc, 5);
         _pc = (_pc + value + 1) & 0xffff;
@@ -1080,7 +1080,7 @@ class Z80 {
     };
 
     _opcodes[0x30] = () { //JR NC, offset
-      var value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
+      int value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
       if ((_f & _FLAG_C) == 0) {
         _machine.contention(_pc, 5);
         _pc = (_pc + value + 1) & 0xffff;
@@ -1128,7 +1128,7 @@ class Z80 {
     };
 
     _opcodes[0x38] = () { //JR C, offset
-      var value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
+      int value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
       if ((_f & _FLAG_C) != 0) {
         _machine.contention(_pc, 5);
         _pc = (_pc + value + 1) & 0xffff;
@@ -3655,7 +3655,7 @@ class Z80 {
     };
 
     _opcodesDDFD[0x34] = (int ixy) { //INC (IX/IY + offset)
-      var value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
+      int value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
       _memptr = (ixy + value) & 0xffff;
       _machine.contention(_pc, 5);
       value = _machine.peek8(_memptr);
@@ -3666,7 +3666,7 @@ class Z80 {
     };
 
     _opcodesDDFD[0x35] = (int ixy) { //DEC (IX/IY + offset)
-      var value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
+      int value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
       _memptr = (ixy + value) & 0xffff;
       _machine.contention(_pc, 5);
       value = _machine.peek8(_memptr);
@@ -3677,7 +3677,7 @@ class Z80 {
     };
 
     _opcodesDDFD[0x36] = (int ixy) { //LD (IX/IY + offset),n
-      var value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
+      int value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
       _memptr = (ixy + value) & 0xffff;
       _pc = (_pc + 1) & 0xffff;
       value = _machine.peek8(_pc);
@@ -3703,7 +3703,7 @@ class Z80 {
     };
 
     _opcodesDDFD[0x46] = (int ixy) { //LD B, (IX/IY + offset)
-      var value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
+      int value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
       _memptr = (ixy + value) & 0xffff;
       _machine.contention(_pc, 5);
       _b = _machine.peek8(_memptr);
@@ -3722,7 +3722,7 @@ class Z80 {
     };
 
     _opcodesDDFD[0x4E] = (int ixy) { //LD C, (IX/IY + offset)
-      var value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
+      int value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
       _memptr = (ixy + value) & 0xffff;
       _machine.contention(_pc, 5);
       _c = _machine.peek8(_memptr);
@@ -3741,7 +3741,7 @@ class Z80 {
     };
 
     _opcodesDDFD[0x56] = (int ixy) { //LD D, (IX/IY + offset)
-      var value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
+      int value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
       _memptr = (ixy + value) & 0xffff;
       _machine.contention(_pc, 5);
       _d = _machine.peek8(_memptr);
@@ -3760,7 +3760,7 @@ class Z80 {
     };
 
     _opcodesDDFD[0x5E] = (int ixy) { //LD E, (IX/IY + offset)
-      var value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
+      int value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
       _memptr = (ixy + value) & 0xffff;
       _machine.contention(_pc, 5);
       _e = _machine.peek8(_memptr);
@@ -3793,7 +3793,7 @@ class Z80 {
     };
 
     _opcodesDDFD[0x66] = (int ixy) { //LD H, (IX/IY + offset)
-      var value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
+      int value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
       _memptr = (ixy + value) & 0xffff;
       _machine.contention(_pc, 5);
       _h = _machine.peek8(_memptr);
@@ -3830,7 +3830,7 @@ class Z80 {
     };
 
     _opcodesDDFD[0x6E] = (int ixy) { //LD L, (IX/IY + offset)
-      var value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
+      int value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
       _memptr = (ixy + value) & 0xffff;
       _machine.contention(_pc, 5);
       _l = _machine.peek8(_memptr);
@@ -3843,7 +3843,7 @@ class Z80 {
     };
 
     _opcodesDDFD[0x70] = (int ixy) { //LD (IX/IY + offset), B
-      var value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
+      int value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
       _memptr = (ixy + value) & 0xffff;
       _machine.contention(_pc, 5);
       _machine.poke8(_memptr, _b);
@@ -3852,7 +3852,7 @@ class Z80 {
     };
 
     _opcodesDDFD[0x71] = (int ixy) { //LD (IX/IY + offset), C
-      var value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
+      int value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
       _memptr = (ixy + value) & 0xffff;
       _machine.contention(_pc, 5);
       _machine.poke8(_memptr, _c);
@@ -3861,7 +3861,7 @@ class Z80 {
     };
 
     _opcodesDDFD[0x72] = (int ixy) { //LD (IX/IY + offset), D
-      var value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
+      int value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
       _memptr = (ixy + value) & 0xffff;
       _machine.contention(_pc, 5);
       _machine.poke8(_memptr, _d);
@@ -3870,7 +3870,7 @@ class Z80 {
     };
 
     _opcodesDDFD[0x73] = (int ixy) { //LD (IX/IY + offset), E
-      var value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
+      int value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
       _memptr = (ixy + value) & 0xffff;
       _machine.contention(_pc, 5);
       _machine.poke8(_memptr, _e);
@@ -3879,7 +3879,7 @@ class Z80 {
     };
 
     _opcodesDDFD[0x74] = (int ixy) { //LD (IX/IY + offset), H
-      var value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
+      int value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
       _memptr = (ixy + value) & 0xffff;
       _machine.contention(_pc, 5);
       _machine.poke8(_memptr, _h);
@@ -3888,7 +3888,7 @@ class Z80 {
     };
 
     _opcodesDDFD[0x75] = (int ixy) { //LD (IX/IY + offset), L
-      var value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
+      int value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
       _memptr = (ixy + value) & 0xffff;
       _machine.contention(_pc, 5);
       _machine.poke8(_memptr, _l);
@@ -3897,7 +3897,7 @@ class Z80 {
     };
 
     _opcodesDDFD[0x77] = (int ixy) { //LD (IX/IY + offset), A
-      var value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
+      int value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
       _memptr = (ixy + value) & 0xffff;
       _machine.contention(_pc, 5);
       _machine.poke8(_memptr, _a);
@@ -3916,7 +3916,7 @@ class Z80 {
     };
 
     _opcodesDDFD[0x7E] = (int ixy) { //LD A, (IX/IY + offset)
-      var value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
+      int value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
       _memptr = (ixy + value) & 0xffff;
       _machine.contention(_pc, 5);
       _a = _machine.peek8(_memptr);
@@ -3935,7 +3935,7 @@ class Z80 {
     };
 
     _opcodesDDFD[0x86] = (int ixy) { //ADD A, (IX/IY + offset)
-      var value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
+      int value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
       _memptr = (ixy + value) & 0xffff;
       _machine.contention(_pc, 5);
       _addA(_machine.peek8(_memptr));
@@ -3954,7 +3954,7 @@ class Z80 {
     };
 
     _opcodesDDFD[0x8E] = (int ixy) { //ADC A, (IX/IY + offset)
-      var value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
+      int value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
       _memptr = (ixy + value) & 0xffff;
       _machine.contention(_pc, 5);
       _adcA(_machine.peek8(_memptr));
@@ -3973,7 +3973,7 @@ class Z80 {
     };
 
     _opcodesDDFD[0x96] = (int ixy) { //SUB (IX/IY + offset)
-      var value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
+      int value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
       _memptr = (ixy + value) & 0xffff;
       _machine.contention(_pc, 5);
       _subA(_machine.peek8(_memptr));
@@ -3992,7 +3992,7 @@ class Z80 {
     };
 
     _opcodesDDFD[0x9E] = (int ixy) { //SBC A, (IX/IY + offset)
-      var value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
+      int value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
       _memptr = (ixy + value) & 0xffff;
       _machine.contention(_pc, 5);
       _sbcA(_machine.peek8(_memptr));
@@ -4011,7 +4011,7 @@ class Z80 {
     };
 
     _opcodesDDFD[0xA6] = (int ixy) { //AND (IX/IY + offset)
-      var value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
+      int value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
       _memptr = (ixy + value) & 0xffff;
       _machine.contention(_pc, 5);
       _andA(_machine.peek8(_memptr));
@@ -4030,7 +4030,7 @@ class Z80 {
     };
 
     _opcodesDDFD[0xAE] = (int ixy) { //XOR (IX/IY + offset)
-      var value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
+      int value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
       _memptr = (ixy + value) & 0xffff;
       _machine.contention(_pc, 5);
       _xorA(_machine.peek8(_memptr));
@@ -4049,7 +4049,7 @@ class Z80 {
     };
 
     _opcodesDDFD[0xB6] = (int ixy) { //OR (IX/IY + offset)
-      var value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
+      int value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
       _memptr = (ixy + value) & 0xffff;
       _machine.contention(_pc, 5);
       _orA(_machine.peek8(_memptr));
@@ -4068,7 +4068,7 @@ class Z80 {
     };
 
     _opcodesDDFD[0xBE] = (int ixy) { //CP (IX/IY + offset)
-      var value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
+      int value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
       _memptr = (ixy + value) & 0xffff;
       _machine.contention(_pc, 5);
       _cp(_machine.peek8(_memptr));
@@ -4077,7 +4077,7 @@ class Z80 {
     };
 
     _opcodesDDFD[0xCB] = (int ixy) { //CB prefix
-      var value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
+      int value = ((_machine.peek8(_pc) + 128) & 0xff) - 128;
       _memptr = (ixy + value) & 0xffff;
       _pc = (_pc + 1) & 0xffff;
       value = _machine.peek8(_pc);
