@@ -65,7 +65,7 @@ class Screen {
   }
 
   void _initCanvas(html.CanvasElement canvas) {
-    _context = canvas.context2d;
+    _context = canvas.context2D;
 
     _imageData = _context.getImageData(32, 28, 256, 192);
   }

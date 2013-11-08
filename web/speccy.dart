@@ -24,7 +24,7 @@ import "dart:html" as html;
 import "package:zx/zx.dart" as zx show Machine48k;
 
 void main() {
-  var canvas = html.query("canvas");
+  var canvas = html.querySelector("canvas");
 
   new zx.Machine48k(canvas).run();
 }
