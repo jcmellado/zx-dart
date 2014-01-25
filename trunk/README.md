@@ -1,9 +1,14 @@
-**zx-dart** is a ZX Spectrum emulator written in Dart.
+ZX Spectrum emulator written in Dart.
 
-### Keyboard
+### Demo ###
+Enjoy the [online demo](http://www.inmensia.com/files/zxdart/index.html)!
 
-* SHIFT: Caps Shift
-* ALT: Symbol Shift
-* ESC: Caps Shift + Space
-* BACKSPACE: Caps Shift + 0
-* CAPS LOCK: Caps Shift + 2
+[![zx-dart](http://www.inmensia.com/files/pictures/posts/zx_dart_001.png)](http://www.inmensia.com/files/zxdart/index.html)
+
+### Keyboard ###
+
+  * SHIFT: Caps Shift
+  * ALT: Symbol Shift
+  * ESC: Caps Shift + Space
+  * BACKSPACE: Caps Shift + 0
+  * CAPS LOCK: Caps Shift + 2
