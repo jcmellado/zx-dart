@@ -1,9 +1,9 @@
 ZX Spectrum emulator written in Dart.
 
 ### Demo ###
-Enjoy the [online demo](http://www.inmensia.com/files/zxdart/index.html)!
+Enjoy the [online demo](https://jcmellado.github.io/showcase/dart/zx-dart/index.html)!
 
-[![zx-dart](http://www.inmensia.com/files/pictures/posts/zx_dart_001.png)](http://www.inmensia.com/files/zxdart/index.html)
+![zx-dart](https://jcmellado.github.io/showcase/img/zx-dart.png)
 
 ### Keyboard ###
 
